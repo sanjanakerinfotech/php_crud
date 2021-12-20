@@ -15,6 +15,7 @@ if (isset($_POST['action'])) {
     $status = (isset($_POST['status']) && $_POST['status']==1) ? 1 : 0;
     $address = $_POST['address'];    
     
+    
     if ($_POST['action']=="add") {
         
         $sql = "INSERT INTO `users`(`first_name`, `last_name`, `email`, `phone_number`, `age`, `address`, `status`, `create_date`) VALUES ('$first_name','$last_name','$email','$phone_number','$age','$address','$status',NOW())";        
@@ -37,5 +38,5 @@ if (isset($_GET['action'])) {
 }
 else {
     $sql = "SELECT * FROM `users`";
-  @  $data = mysqli_query($con, $sql);
+    $data = mysqli_query($con, $sql);
 }
